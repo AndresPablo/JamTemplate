@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameController : MonoBehaviour
+{
+    #region SINGLETON
+    public static GameController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion SINGLETON
+
+    #region VARS
+    public Player player;
+    [Space]
+    [SerializeField] GameObject cardPrefab;
+    [SerializeField] Transform spawnPoint;
+    #endregion VARS
+
+    #region EVENTS
+    public delegate void EmptyVoidDelegate();
+    public delegate void EmptyIntDelegate(int amount);
+    public static event EmptyIntDelegate OnChangeScore;
+    public static event EmptyVoidDelegate OnGameStart;
+    public static event EmptyVoidDelegate OnPlayerDeath;
+    #endregion EVENTS
+
+    void Start()
+    {
+       
+    }
+    
+    public void GameStart()
+    {
+       
+    }
+    
+    Void Update(){}
+    
+    
+    
+ }
