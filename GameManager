@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region SINGLETON
-    public static GameController instance;
+    public static GameManager instance;
     private void Awake()
     {
         instance = this;
