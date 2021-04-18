@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Zoom : MonoBehaviour
+public class ZoomWheel : MonoBehaviour
 {
     public float zoomMin = 4;
     public float zoomMax = 8;
