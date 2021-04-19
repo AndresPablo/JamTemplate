@@ -7,6 +7,11 @@ public class HealthHandler : MonoBehaviour, IDamageable
     [SerializeField]float health = 100;
     [SerializeField]GameObject deathPrefab;
     
+    #region EVENTS
+    public UnityEvent OnTakeDamage;
+    public UnityEvent OnDeath;
+    #endregion EVENTS
+    
     protected virtual void Start() {
         health = maxHealth;
     }
