@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class CrosshairCursor2D : MonoBehaviour
 {
-    private void Awake() {
+    void Awake() {
         Cursor.visible = false;
     }
 
@@ -11,5 +11,9 @@ public class CrosshairCursor2D : MonoBehaviour
     {
         Vector2 mouseCursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mouseCursorPos;
+    }
+    
+    void OnDisable() {
+        Cursor.visible = true;
     }
 }
