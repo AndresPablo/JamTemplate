@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class FadeText : MonoBehaviour
+public class FadeInOutText : MonoBehaviour
 {
     [SerializeField] float defaultTime = 2;
     Color initialColor;
