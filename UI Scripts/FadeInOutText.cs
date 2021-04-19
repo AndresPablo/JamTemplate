@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Text))]
 public class FadeInOutText : MonoBehaviour
 {
     [SerializeField] float defaultTime = 2;
