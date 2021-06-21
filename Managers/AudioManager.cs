@@ -13,9 +13,8 @@ public class AudioManager : MonoBehaviour
     }
     # endregion
     
-    public AudioListener listener;
     [SerializeField] AudioSource source;
-    
+    [SerializeField]bool randomizePitch;
 
     void Start()
     {
@@ -55,7 +54,12 @@ public class AudioManager : MonoBehaviour
     {
         if(clip == null)
             return;
+        
+        if(randomizePitch) source.pitch = (Random.Range(0.6f, .9f));
+        
         source.PlayOneShot(clip);
+        
+        if(randomizePitch) source.pitch = 1f;
     }
 
 }
