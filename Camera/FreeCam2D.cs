@@ -3,7 +3,7 @@ using UnityEngine;
 public class FreeCam2D : MonoBehaviour
 {
     public float speed = 1f;
-    public Vector2 boundaryBox = new Vector2(32,18);
+    public Vector2 boundaryBox = new Vector2(16,9);
     Vector2 dir;
 
 
