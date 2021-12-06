@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
     
     public void GameStart()
     {
-       
+       if(OnGameStart != null)
+            OnGameStart();
     }
     
     public void SetGameState(GameState newState)
