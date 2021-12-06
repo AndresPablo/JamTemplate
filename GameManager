@@ -13,18 +13,17 @@ public class GameManager : MonoBehaviour
     #endregion SINGLETON
 
     #region VARS
-    public Player player;
-    [Space]
-    [SerializeField] GameObject cardPrefab;
-    [SerializeField] Transform spawnPoint;
+    
     #endregion VARS
 
     #region EVENTS
     public delegate void EmptyVoidDelegate();
     public delegate void EmptyIntDelegate(int amount);
+    public delegate void GameStateDelegate(GameState state);
+    public static event GameStateDelegate OnChangeState;
     public static event EmptyIntDelegate OnChangeScore;
     public static event EmptyVoidDelegate OnGameStart;
-    public static event EmptyVoidDelegate OnPlayerDeath;
+    public static event EmptyVoidDelegate OnPlayerDeath;    
     #endregion EVENTS
 
     void Start()
@@ -37,8 +36,30 @@ public class GameManager : MonoBehaviour
        
     }
     
-    Void Update(){}
-    
+    public void SetGameState(GameState newState)
+    {
+        State = newState;
+
+        if(State == GameState.PAUSE)
+            TooglePause(true);
+        else if(State == GameState.PLAY)
+            TooglePause(false);
+           
+        if(OnChangeState != null)
+            OnChangeState(State);
+    }
+
+    // Cambia el estado de la pausa
+    public void TooglePause(bool state)
+    {
+        if(state){
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
     
     
  }
