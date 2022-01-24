@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     #endregion SINGLETON
 
     #region VARS
-    
+    public GameState State;
     #endregion VARS
 
     #region EVENTS
