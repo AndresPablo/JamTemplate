@@ -18,6 +18,7 @@ public class LineCircle_Rend : MonoBehaviour
         line.positionCount = segments+1;
         line.useWorldSpace = false;
         line.enabled = false;
+        // CreatePoints();
     }
 
     void CreatePoints ()
