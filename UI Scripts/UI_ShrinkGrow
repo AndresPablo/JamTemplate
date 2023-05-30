@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class UI_ShrinkGrow : MonoBehaviour
+{
+    [SerializeField] float scaleRate = .025f;
+    [SerializeField] float minScale = 1;
+    [SerializeField] float maxScale = 3f;
+    
+    void ApplyScaleRate() {
+        transform.localScale += Vector3.one * scaleRate;
+    }
+    
+    private void Update() {
+        //if we exceed the defined range then correct the sign of scaleRate.
+        if(transform.localScale.x < minScale) {
+            scaleRate = Mathf.Abs(scaleRate);
+        }
+        else if(transform.localScale.x > maxScale) {
+            scaleRate = -Mathf.Abs(scaleRate);
+        }
+        ApplyScaleRate();
+    }
+}
